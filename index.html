@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Fee Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h2>How Much Are The Fees?</h2>
+        <h4>A tool to let you see how much fees are with all popular payment processors/marketplaces. </h4>
+        <div class="calculator">
+            <div class="input-container">
+                <span class="dollar-sign">$</span>
+                <input type="text" id="amountInput" placeholder="Enter amount">
+            </div>
+            <div class="buttons">
+                <button onclick="calculateFees('paypal')">PayPal</button>
+                <button onclick="calculateFees('stripe')">Stripe</button>
+                <button onclick="calculateFees('gumroad')">Gumroad</button>
+                <button onclick="calculateFees('etsy')">Etsy</button>
+            </div>
+            <div id="result"></div>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="blog-section">
+            <h2>Understanding Payment Processing Fees</h2>
+            
+            <div class="provider-info" id="paypal-info">
+                <h3>PayPal</h3>
+                <p>
+                    PayPal charges a transaction fee based on a percentage of the sale amount plus a fixed fee. 
+                    For domestic transactions in the US, the fee is 3.49% of the sale amount plus $0.49.
+                </p>
+            </div>
+
+            <div class="provider-info" id="stripe-info">
+                <h3>Stripe</h3>
+                <p>
+                    Stripe charges a transaction fee based on a percentage of the sale amount plus a fixed fee. 
+                    The fee for Stripe is 2.9% of the sale amount plus $0.30.
+                </p>
+            </div>
+
+            <div class="provider-info" id="gumroad-info">
+                <h3>Gumroad</h3>
+                <p>
+                    Gumroad charges a flat transaction fee of 10% of the sale amount. There is no additional fixed fee.
+                </p>
+            </div>
+
+            <div class="provider-info" id="etsy-info">
+                <h3>Etsy</h3>
+                <p>
+                    Etsy charges a transaction fee of 6.5% of the sale amount plus a payment processing fee of 3% 
+                    plus $0.25 for each transaction.
+                </p>
+            </div>
+
+            <h2>How We Calculate Totals</h2>
+            <p>
+                The total amount after fees is calculated by subtracting the calculated fees (transaction fee plus fixed fee) 
+                from the original sale amount. This provides the actual amount you'll receive after accounting for payment 
+                processing fees.
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
